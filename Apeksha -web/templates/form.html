@@ -1,0 +1,103 @@
+<html>
+	<head>
+	<!-- Bootstrap CSS -->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+		<title>Breast Cancer Test</title>
+                  <link rel="shortcut icon" href="static/imgs/logoapeksha2.png">
+	</head>
+	<body>
+	<!-- Java Script -->	
+		<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+		
+		<!-- Navbar-->
+		<nav class="navbar navbar-dark bg-dark">
+			<span class="navbar-brand mb-0 h1">Breast Cancer Test</span>
+                       
+		</nav>
+		<div class="container">
+			<br>
+			<!--Form-->
+			<form action = "{{url_for('predict')}}" method ="POST" >
+				<fieldset>
+				<legend>Breast Cancer Detection Form</legend><br>
+				  <div class="card card-body" >
+					  <div class="form-group  row">
+						<div class="col-sm-3">
+							<label for="radius_mean">Clump Thickness<br>(radius_mean)</label>
+							<input type="Double" step="any" class="form-control" id="radius_mean" name="radius_mean" required>
+						</div>
+                                               <div class="col-sm-3"></div>
+
+
+						<div class="col-sm-3">
+							<label for="texture_mean">Uniformity of Cell Size<br>(texture_mean)</label>
+							<input type="number" step="any" class="form-control" id="texture_mean" name="texture_mean" required>
+					   </div>
+					  </div>
+					  <br>
+					  <div class="form-group  row">
+						  <div class="col-sm">
+							<label for="perimeter_mean">Uniformity of Cell Shape<br>(perimeter_mean)</label>
+							<input type="number" step="any" class="form-control" id="perimeter_mean" name="perimeter_mean" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="area_mean">Marginal Adhesion<br>(area_mean)</label>
+							<input type="number" step="any" class="form-control" id="area_mean" name="area_mean"  required>
+						  </div>
+						  <div class="col-sm">
+							<label for="smoothness_mean">Single Epithelial Cell Size<br>(smoothness_mean)</label>
+							<input type="number" step="any"  class="form-control" id="smoothness_mean" name="smoothness_mean" required>
+						  </div>
+						  <div class="col-sm">
+							<label for="compactness_mean">Bare Nuclei<br>(compactness_mean)</label>
+							<input type="number" step="any"  class="form-control" id="compactness_mean" name="compactness_mean" required>
+						</div>
+					  </div>
+					  
+					  <br>
+					  <div class="form-group row">
+							<div class="col-sm">
+								<label for="concavity_mean">Bland Chromatin<br>(concavity_mean) </label>
+								<input type="number" step="any" class="form-control" id="concavity_mean" name="concavity_mean" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="concave points_mean">Normal Nucleoli<br>(concave points_mean)</label>
+								<input type="number" step="any" class="form-control" id="concave points_mean" name="concave points_mean" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="symmetry_mean">Mitoses<br>(symmetry_mean)</label>
+								<input type="number" step="any" class="form-control" id="symmetry_mean" name="symmetry_mean" required>
+							  </div>
+							  <div class="col-sm">
+								<label for="fractal_dimension_mean">fractal_dimension_mean<br>(fractal_dimensional_mean)</label>
+								<input type="number" step="any" class="form-control" id="fractal_dimension_mean" name="fractal_dimension_mean" required>
+							  </div>
+						  </div>
+						  <br>
+						  
+						  
+						  
+					  </div>
+					  <br>
+					  <div class="form-group">
+						<input class="btn btn-primary" type="submit" value="Result">
+					  </div>
+					  
+					  <!--Prediction Result-->
+					  <div id ="result">
+							<strong style="color:red">{{result}}</strong>
+					 </div>
+				     </div>
+			 </fieldset>
+			</form>
+			
+		</div>
+		
+	</body>
+</html>
