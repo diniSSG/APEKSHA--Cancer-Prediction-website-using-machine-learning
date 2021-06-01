@@ -12,7 +12,7 @@ KNearest neighbours algorithm,
 The Web application has developed using python flask framework 
 
 To Run The Application,
-Open up the IDE (anaconda with the Spyder IDE would be idiol ) ,
+Open up the IDE (Anaconda Navigator with the Spyder IDE would be idiol ) ,
 then open 
 the app.py file,
 Run the app.py file,
