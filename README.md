@@ -1,4 +1,5 @@
-# APEKSHA--Cancer-Prediction-website-using-machine-learning
+# APEKSHA
+Cancer-Prediction-website-using-machine-learning
 
 ![Screenshot (211)](https://user-images.githubusercontent.com/51855634/120377811-3daa7480-c33b-11eb-82cd-76e34aa95973.png)
 
